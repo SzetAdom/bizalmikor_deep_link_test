@@ -1,1 +1,1 @@
-Teszt `<!DOCTYPE html>`
+Teszt
