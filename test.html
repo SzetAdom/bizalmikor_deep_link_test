@@ -24,6 +24,12 @@
             if (url) async () => {
               await  window.open(url, '_self');
 
+              //let current url be the current url with a new parameter added redirect=true
+                const currentUrl = window.location.href;
+                const newUrl = currentUrl + '?redirect=true';
+
+                //redirect to new url
+                await window.open(newUrl, '_self');
             
             }
 
