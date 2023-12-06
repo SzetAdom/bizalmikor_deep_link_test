@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.roundoftrustapp",
+      "sha256_cert_fingerprints": [
+        "59:2F:26:E7:14:A7:BD:99:92:77:05:BB:C4:FE:84:2E:51:E4:44:C7:3C:6D:80:5A:99:89:C0:01:0F:C2:94:EF"
+      ]
+    }
+  }
+]
