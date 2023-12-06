@@ -9,6 +9,11 @@
         // Get the URL path parameter
         const urlParams = new URLSearchParams(window.location.search);
         const url = urlParams.get('url');
+        const appNotinstalled = urlParams.get('redirect');
+
+        if (appNotinstalled == 'true') {
+            window.location.href = 'https://play.google.com/store/apps/details?id=com.roundoftrustapp';
+        }
 
         //find button element
         const button = document.getElementById('button');
@@ -16,15 +21,10 @@
         //add click event listener
         button.addEventListener('click', function() {
             //open url in same tab, if url is not null
-            if (url) {
-                window.open(url, '_self')
-                .then((result) => {
-                    
-                }).catch((err) => {
-                    print(err);
-                    //open com.roundoftrustapp on play store
-                    window.open('https://play.google.com/store/apps/details?id=com.roundoftrustapp', '_self');
-                });
+            if (url) async () => {
+              await  window.open(url, '_self');
+
+            
             }
 
         });
