@@ -4,7 +4,7 @@
     <title>URL Path Parameter</title>
 </head>
 <body>
-    <a id="link">Alkalmazás megnyitása</a>
+    <a id="link">Bizalmi Kör alkalmazás megnyitása</a>
 
     <script>
         // Get the URL path parameter
@@ -15,6 +15,25 @@
 
         // Set the link's href attribute
         document.getElementById('link').href = url;
+
+        // Open the link and if it throws an error, redirect to the app store
+        window.open(url).catch(function () {
+            //detect if android or ios
+            var ua = navigator.userAgent.toLowerCase();
+            var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+            var isIOS = ( ua.indexOf("iphone") > -1 || ua.indexOf("ipad") > -1 || ua.indexOf("ipod") > -1 );
+            var isMobile = isAndroid || isIOS;
+
+            if (isMobile) {
+                if (isAndroid) {
+                    window.location.href = "https://play.google.com/store/apps/details?id=com.roundoftrustapp";
+                } else if (isIOS) {
+                    window.location.href = "https://apps.apple.com/hu/app/bizalmi-k%C3%B6r/id1464564250";
+                }
+            } else {
+                window.location.href = "https://bizalmikor.hu/applikacio/";
+            }
+        });
 
 
     </script>
