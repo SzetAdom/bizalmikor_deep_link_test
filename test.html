@@ -17,7 +17,14 @@
         button.addEventListener('click', function() {
             //open url in same tab, if url is not null
             if (url) {
-                window.open(url, '_self');
+                window.open(url, '_self')
+                .then((result) => {
+                    
+                }).catch((err) => {
+                    print(err);
+                    //open com.roundoftrustapp on play store
+                    window.open('https://play.google.com/store/apps/details?id=com.roundoftrustapp', '_self');
+                });
             }
 
         });
