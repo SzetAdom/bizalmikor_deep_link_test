@@ -11,6 +11,8 @@
         const urlParams = new URLSearchParams(window.location.search);
         const url = urlParams.get('url');
 
+        console.log(url);
+
         // Set the link's href attribute
         document.getElementById('link').href = url;
 
