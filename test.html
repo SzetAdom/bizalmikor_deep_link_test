@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-
 <html>
 <head>
-    <title>Test</title>
+    <title>URL Path Parameter</title>
 </head>
 <body>
-    <a href="myapp://test">Open my app</a>
+    <a id="link">Alkalmazás megnyitása</a>
+
+    <script>
+        // Get the URL path parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const url = urlParams.get('url');
+
+        // Set the link's href attribute
+        document.getElementById('link').href = url;
+
+
+    </script>
 </body>
 </html>
