@@ -6,6 +6,11 @@
 <body>
     <a id="link">Alkalmazás megnyitása</a>
 
+    ///play storeba navigálás
+    <a href="https://play.google.com/store/apps/details?id=com.roundoftrustapp">Alkalmazás letöltése</a>
+
+
+
     <script>
         // Get the URL path parameter
         const urlParams = new URLSearchParams(window.location.search);
@@ -14,7 +19,7 @@
         console.log(url);
 
         // Set the link's href attribute
-        document.getElementById('link').href = "app:roundoftrustapp/" +url;
+        document.getElementById('link').href = "app://roundoftrustapp/" +url;
 
         document.getElementById('link').click();
 
