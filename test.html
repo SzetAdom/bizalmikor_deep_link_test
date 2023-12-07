@@ -4,38 +4,19 @@
     <title>URL Path Parameter</title>
 </head>
 <body>
-    <button id="button">Bizalmikor Megnyitása</button>
+    <a id="link">Alkalmazás megnyitása</a>
+
     <script>
         // Get the URL path parameter
         const urlParams = new URLSearchParams(window.location.search);
         const url = urlParams.get('url');
-        const appNotinstalled = urlParams.get('redirect');
 
-        if (appNotinstalled == 'true') {
-            window.location.href = 'https://play.google.com/store/apps/details?id=com.roundoftrustapp';
-        }
+        console.log(url);
 
-        //find button element
-        const button = document.getElementById('button');
+        // Set the link's href attribute
+        document.getElementById('link').href = "app:roundoftrustapp/" +url;
 
-        //add click event listener
-        button.addEventListener('click', function() {
-            //open url in same tab, if url is not null
-            if (url) async () => {
-              await  window.open(url, '_self');
-
-              //let current url be the current url with a new parameter added redirect=true
-                const currentUrl = window.location.href;
-                const newUrl = currentUrl + '?redirect=true';
-
-                //redirect to new url
-                await window.open(newUrl, '_self');
-            
-            }
-
-        });
-
-        button.click();
+        document.getElementById('link').click();
 
     </script>
 </body>
